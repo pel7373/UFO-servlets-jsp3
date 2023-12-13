@@ -1,0 +1,109 @@
+13.12.2023 02:54:47.365 [http-bio-8080-exec-2] INFO   index.jsp - index.jsp is opened!
+13.12.2023 02:54:57.072 [http-bio-8080-exec-6] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: false; message: Ви відхилили виклик; next page: losePage.jsp
+13.12.2023 02:54:57.073 [http-bio-8080-exec-6] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви відхилили виклик; forwarding to page: losePage.jsp; status was set: 200.
+13.12.2023 02:55:47.681 [http-bio-8080-exec-8] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: false; message: Ви відхилили виклик; next page: losePage.jsp
+13.12.2023 02:55:47.730 [http-bio-8080-exec-8] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви відхилили виклик; forwarding to page: losePage.jsp; status was set: 200.
+13.12.2023 02:55:48.252 [http-bio-8080-exec-8] INFO   losePage.jsp - losePage.jsp is opened!
+13.12.2023 02:56:05.529 [http-bio-8080-exec-1] INFO   index.jsp - index.jsp is opened!
+13.12.2023 02:56:09.131 [http-bio-8080-exec-4] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
+13.12.2023 02:56:09.132 [http-bio-8080-exec-4] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
+13.12.2023 02:56:09.304 [http-bio-8080-exec-4] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 02:56:13.843 [http-bio-8080-exec-8] INFO   u.UFO01CaptainBridgeService - Answer was received. isAccepted: false; message: Ви відмовилися підніматися на капітанський місток. Ви не пішли на переговори!; next page: losePage.jsp
+13.12.2023 02:56:13.844 [http-bio-8080-exec-8] INFO   u.w.UFO01CaptainBridgeServlet - Answer was received. Message: Ви відмовилися підніматися на капітанський місток. Ви не пішли на переговори!; forwarding to page: losePage.jsp; status was set: 200.
+13.12.2023 02:56:13.848 [http-bio-8080-exec-8] INFO   losePage.jsp - losePage.jsp is opened!
+13.12.2023 02:56:20.190 [http-bio-8080-exec-9] INFO   index.jsp - index.jsp is opened!
+13.12.2023 02:56:25.468 [http-bio-8080-exec-6] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
+13.12.2023 02:56:25.468 [http-bio-8080-exec-6] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
+13.12.2023 02:56:25.473 [http-bio-8080-exec-6] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 02:56:28.098 [http-bio-8080-exec-7] INFO   u.UFO01CaptainBridgeService - Answer was received. isAccepted: true; message: Ви піднялися на капітанський місток; next page: whoAreYou.jsp
+13.12.2023 02:56:28.099 [http-bio-8080-exec-7] INFO   u.w.UFO01CaptainBridgeServlet - Answer was received. Message: Ви піднялися на капітанський місток; forwarding to page: whoAreYou.jsp; status was set: 200.
+13.12.2023 02:56:28.253 [http-bio-8080-exec-7] INFO   whoAreYou.jsp - whoAreYou.jsp is opened!
+13.12.2023 02:56:30.632 [http-bio-8080-exec-7] INFO   u.UFO02WhoAreYouService - Answer was received. isAccepted: true; message: Ви розповіли правду про себе; next page: youWon.jsp
+13.12.2023 02:56:30.633 [http-bio-8080-exec-7] INFO   u.w.UFO02WhoAreYouServlet - Answer was received. Message: Ви розповіли правду про себе; forwarding to page: youWon.jsp; status was set: 200.
+13.12.2023 02:56:30.770 [http-bio-8080-exec-7] INFO   youWon.jsp - youWon.jsp is opened!
+13.12.2023 02:56:46.849 [http-bio-8080-exec-2] INFO   u.UFO02WhoAreYouService - Answer was received. isAccepted: true; message: Ви розповіли правду про себе; next page: youWon.jsp
+13.12.2023 02:56:46.850 [http-bio-8080-exec-2] INFO   u.w.UFO02WhoAreYouServlet - Answer was received. Message: Ви розповіли правду про себе; forwarding to page: youWon.jsp; status was set: 200.
+13.12.2023 02:56:46.854 [http-bio-8080-exec-2] INFO   youWon.jsp - youWon.jsp is opened!
+13.12.2023 02:56:51.209 [http-bio-8080-exec-2] INFO   index.jsp - index.jsp is opened!
+13.12.2023 02:57:21.993 [http-bio-8080-exec-10] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: false; message: Ви відхилили виклик; next page: losePage.jsp
+13.12.2023 02:57:21.993 [http-bio-8080-exec-10] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви відхилили виклик; forwarding to page: losePage.jsp; status was set: 200.
+13.12.2023 02:57:22.167 [http-bio-8080-exec-10] INFO   losePage.jsp - losePage.jsp is opened!
+13.12.2023 02:57:42.769 [http-bio-8080-exec-7] INFO   index.jsp - index.jsp is opened!
+13.12.2023 02:58:25.974 [http-bio-8080-exec-4] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
+13.12.2023 02:58:25.978 [http-bio-8080-exec-4] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
+13.12.2023 02:58:26.123 [http-bio-8080-exec-4] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 02:59:32.437 [http-bio-8080-exec-5] INFO   u.UFO01CaptainBridgeService - Answer was received. isAccepted: false; message: Ви відмовилися підніматися на капітанський місток. Ви не пішли на переговори!; next page: losePage.jsp
+13.12.2023 02:59:32.441 [http-bio-8080-exec-5] INFO   u.w.UFO01CaptainBridgeServlet - Answer was received. Message: Ви відмовилися підніматися на капітанський місток. Ви не пішли на переговори!; forwarding to page: losePage.jsp; status was set: 200.
+13.12.2023 02:59:32.448 [http-bio-8080-exec-5] INFO   losePage.jsp - losePage.jsp is opened!
+13.12.2023 02:59:41.426 [http-bio-8080-exec-3] INFO   index.jsp - index.jsp is opened!
+13.12.2023 02:59:44.264 [http-bio-8080-exec-7] INFO   index.jsp - index.jsp is opened!
+13.12.2023 02:59:45.838 [http-bio-8080-exec-7] INFO   index.jsp - index.jsp is opened!
+13.12.2023 02:59:46.465 [http-bio-8080-exec-7] INFO   index.jsp - index.jsp is opened!
+13.12.2023 02:59:48.152 [http-bio-8080-exec-7] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
+13.12.2023 02:59:48.154 [http-bio-8080-exec-7] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
+13.12.2023 02:59:48.157 [http-bio-8080-exec-7] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 02:59:50.236 [http-bio-8080-exec-8] INFO   u.UFO01CaptainBridgeService - Answer was received. isAccepted: true; message: Ви піднялися на капітанський місток; next page: whoAreYou.jsp
+13.12.2023 02:59:50.237 [http-bio-8080-exec-8] INFO   u.w.UFO01CaptainBridgeServlet - Answer was received. Message: Ви піднялися на капітанський місток; forwarding to page: whoAreYou.jsp; status was set: 200.
+13.12.2023 02:59:50.242 [http-bio-8080-exec-8] INFO   whoAreYou.jsp - whoAreYou.jsp is opened!
+13.12.2023 02:59:52.428 [http-bio-8080-exec-8] INFO   u.UFO02WhoAreYouService - Answer was received. isAccepted: true; message: Ви розповіли правду про себе; next page: youWon.jsp
+13.12.2023 02:59:52.429 [http-bio-8080-exec-8] INFO   u.w.UFO02WhoAreYouServlet - Answer was received. Message: Ви розповіли правду про себе; forwarding to page: youWon.jsp; status was set: 200.
+13.12.2023 02:59:52.435 [http-bio-8080-exec-8] INFO   youWon.jsp - youWon.jsp is opened!
+13.12.2023 02:59:56.904 [http-bio-8080-exec-9] INFO   index.jsp - index.jsp is opened!
+13.12.2023 03:00:00.921 [http-bio-8080-exec-7] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: false; message: Ви відхилили виклик; next page: losePage.jsp
+13.12.2023 03:00:00.921 [http-bio-8080-exec-7] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви відхилили виклик; forwarding to page: losePage.jsp; status was set: 200.
+13.12.2023 03:00:00.923 [http-bio-8080-exec-7] INFO   losePage.jsp - losePage.jsp is opened!
+13.12.2023 03:00:06.739 [http-bio-8080-exec-10] INFO   index.jsp - index.jsp is opened!
+13.12.2023 03:00:09.163 [http-bio-8080-exec-6] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
+13.12.2023 03:00:09.165 [http-bio-8080-exec-6] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
+13.12.2023 03:00:09.167 [http-bio-8080-exec-6] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 03:00:11.204 [http-bio-8080-exec-6] INFO   u.UFO01CaptainBridgeService - Answer was received. isAccepted: true; message: Ви піднялися на капітанський місток; next page: whoAreYou.jsp
+13.12.2023 03:00:11.204 [http-bio-8080-exec-6] INFO   u.w.UFO01CaptainBridgeServlet - Answer was received. Message: Ви піднялися на капітанський місток; forwarding to page: whoAreYou.jsp; status was set: 200.
+13.12.2023 03:00:11.206 [http-bio-8080-exec-6] INFO   whoAreYou.jsp - whoAreYou.jsp is opened!
+13.12.2023 03:00:57.467 [http-bio-8080-exec-7] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 03:01:12.203 [http-bio-8080-exec-10] INFO   index.jsp - index.jsp is opened!
+13.12.2023 03:01:17.824 [http-bio-8080-exec-2] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
+13.12.2023 03:01:17.825 [http-bio-8080-exec-2] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
+13.12.2023 03:01:17.833 [http-bio-8080-exec-2] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 03:01:27.713 [http-bio-8080-exec-4] INFO   u.UFO01CaptainBridgeService - Answer was received. isAccepted: true; message: Ви піднялися на капітанський місток; next page: whoAreYou.jsp
+13.12.2023 03:01:27.714 [http-bio-8080-exec-4] INFO   u.w.UFO01CaptainBridgeServlet - Answer was received. Message: Ви піднялися на капітанський місток; forwarding to page: whoAreYou.jsp; status was set: 200.
+13.12.2023 03:01:27.720 [http-bio-8080-exec-4] INFO   whoAreYou.jsp - whoAreYou.jsp is opened!
+13.12.2023 03:01:47.443 [http-bio-8080-exec-9] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 03:01:54.972 [http-bio-8080-exec-10] INFO   index.jsp - index.jsp is opened!
+13.12.2023 03:01:57.800 [http-bio-8080-exec-10] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
+13.12.2023 03:01:57.802 [http-bio-8080-exec-10] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
+13.12.2023 03:01:57.807 [http-bio-8080-exec-10] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 03:01:59.731 [http-bio-8080-exec-6] INFO   u.UFO01CaptainBridgeService - Answer was received. isAccepted: true; message: Ви піднялися на капітанський місток; next page: whoAreYou.jsp
+13.12.2023 03:01:59.731 [http-bio-8080-exec-6] INFO   u.w.UFO01CaptainBridgeServlet - Answer was received. Message: Ви піднялися на капітанський місток; forwarding to page: whoAreYou.jsp; status was set: 200.
+13.12.2023 03:01:59.733 [http-bio-8080-exec-6] INFO   whoAreYou.jsp - whoAreYou.jsp is opened!
+13.12.2023 03:02:08.654 [http-bio-8080-exec-7] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 03:02:11.793 [http-bio-8080-exec-3] INFO   u.UFO01CaptainBridgeService - Answer was received. isAccepted: true; message: Ви піднялися на капітанський місток; next page: whoAreYou.jsp
+13.12.2023 03:02:11.794 [http-bio-8080-exec-3] INFO   u.w.UFO01CaptainBridgeServlet - Answer was received. Message: Ви піднялися на капітанський місток; forwarding to page: whoAreYou.jsp; status was set: 200.
+13.12.2023 03:02:11.799 [http-bio-8080-exec-3] INFO   whoAreYou.jsp - whoAreYou.jsp is opened!
+13.12.2023 03:02:16.196 [http-bio-8080-exec-4] INFO   u.UFO02WhoAreYouService - Answer was received. isAccepted: true; message: Ви розповіли правду про себе; next page: youWon.jsp
+13.12.2023 03:02:16.197 [http-bio-8080-exec-4] INFO   u.w.UFO02WhoAreYouServlet - Answer was received. Message: Ви розповіли правду про себе; forwarding to page: youWon.jsp; status was set: 200.
+13.12.2023 03:02:16.201 [http-bio-8080-exec-4] INFO   youWon.jsp - youWon.jsp is opened!
+13.12.2023 03:02:33.488 [http-bio-8080-exec-9] INFO   u.UFO02WhoAreYouService - Answer was received. isAccepted: true; message: Ви розповіли правду про себе; next page: youWon.jsp
+13.12.2023 03:02:33.490 [http-bio-8080-exec-9] INFO   u.w.UFO02WhoAreYouServlet - Answer was received. Message: Ви розповіли правду про себе; forwarding to page: youWon.jsp; status was set: 200.
+13.12.2023 03:02:33.494 [http-bio-8080-exec-9] INFO   youWon.jsp - youWon.jsp is opened!
+13.12.2023 03:02:43.642 [http-bio-8080-exec-10] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 03:02:46.828 [http-bio-8080-exec-5] INFO   u.UFO01CaptainBridgeService - Answer was received. isAccepted: true; message: Ви піднялися на капітанський місток; next page: whoAreYou.jsp
+13.12.2023 03:02:46.828 [http-bio-8080-exec-5] INFO   u.w.UFO01CaptainBridgeServlet - Answer was received. Message: Ви піднялися на капітанський місток; forwarding to page: whoAreYou.jsp; status was set: 200.
+13.12.2023 03:02:46.831 [http-bio-8080-exec-5] INFO   whoAreYou.jsp - whoAreYou.jsp is opened!
+13.12.2023 03:02:49.041 [http-bio-8080-exec-7] INFO   u.UFO02WhoAreYouService - Answer was received. isAccepted: true; message: Ви розповіли правду про себе; next page: youWon.jsp
+13.12.2023 03:02:49.043 [http-bio-8080-exec-7] INFO   u.w.UFO02WhoAreYouServlet - Answer was received. Message: Ви розповіли правду про себе; forwarding to page: youWon.jsp; status was set: 200.
+13.12.2023 03:02:49.046 [http-bio-8080-exec-7] INFO   youWon.jsp - youWon.jsp is opened!
+13.12.2023 03:03:00.773 [http-bio-8080-exec-9] INFO   index.jsp - index.jsp is opened!
+13.12.2023 03:40:20.785 [http-bio-8080-exec-4] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
+13.12.2023 03:40:20.789 [http-bio-8080-exec-4] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
+13.12.2023 03:40:21.829 [http-bio-8080-exec-4] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 03:40:32.634 [http-bio-8080-exec-7] INFO   index.jsp - index.jsp is opened!
+13.12.2023 03:40:36.034 [http-bio-8080-exec-9] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
+13.12.2023 03:40:36.035 [http-bio-8080-exec-9] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
+13.12.2023 03:40:36.037 [http-bio-8080-exec-9] INFO   c.jsp - climbCaptainBridge.jsp is opened!
+13.12.2023 03:40:38.096 [http-bio-8080-exec-2] INFO   u.UFO01CaptainBridgeService - Answer was received. isAccepted: false; message: Ви відмовилися підніматися на капітанський місток. Ви не пішли на переговори!; next page: losePage.jsp
+13.12.2023 03:40:38.097 [http-bio-8080-exec-2] INFO   u.w.UFO01CaptainBridgeServlet - Answer was received. Message: Ви відмовилися підніматися на капітанський місток. Ви не пішли на переговори!; forwarding to page: losePage.jsp; status was set: 200.
+13.12.2023 03:40:38.201 [http-bio-8080-exec-2] INFO   losePage.jsp - losePage.jsp is opened!
+13.12.2023 03:40:43.409 [http-bio-8080-exec-5] INFO   index.jsp - index.jsp is opened!
+13.12.2023 03:40:45.319 [http-bio-8080-exec-5] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
+13.12.2023 03:40:45.320 [http-bio-8080-exec-5] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
+13.12.2023 03:40:45.322 [http-bio-8080-exec-5] INFO   c.jsp - climbCaptainBridge.jsp is opened!
