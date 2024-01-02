@@ -17,12 +17,10 @@
 
 <center>
 <h1>Ви втрачаєте пам'ять! Прийняти виклик НЛО?</h1>
-<form action="/acceptChallenge" method="post">
-
+<form action="/acceptChallengeServlet" method="post">
     <input type="radio" name="answer" value="true">Прийняти виклик<br>
     <input type="radio" name="answer" value="false">Відхилити виклик<br>
     <input type="submit" value="Ок">
-
 </form>
 </center>
 <jsp:include page="footer.jsp" />

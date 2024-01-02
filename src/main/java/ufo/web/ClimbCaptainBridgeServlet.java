@@ -15,7 +15,7 @@ import java.io.IOException;
 
 import static ufo.Constants.*;
 
-@WebServlet("/climbCaptainBridge")
+@WebServlet("/climbCaptainBridgeServlet")
 public class ClimbCaptainBridgeServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(
             ClimbCaptainBridgeServlet.class);
@@ -24,24 +24,32 @@ public class ClimbCaptainBridgeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         StringBuilder sb = new StringBuilder();
-        HttpSession session = req.getSession();
-
         boolean answerIfClimbCaptainBridge = Boolean.parseBoolean(req.getParameter("answer"));
         Answer answer = climbCaptainBridgeService.call(answerIfClimbCaptainBridge);
-
+        HttpSession session = req.getSession();
         String markerFromStartToFinish = (String) session.getAttribute("markerFromStartToFinish");
 
-        if(markerFromStartToFinish.equals(ACCEPT_CHALLENGE_ACCEPTED)) {
-            if(answerIfClimbCaptainBridge) {
-                session.setAttribute("markerFromStartToFinish", CLIMB_CAPTAIN_BRIDGE_ACCEPTED);
-            } else {
-                Integer total = (Integer) session.getAttribute("total");
-                if(total == null) {
-                    total = 0;
-                }
-                total++;
-                session.setAttribute("total", total);
+        session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
+
+        if (!markerFromStartToFinish.equals(ACCEPT_CHALLENGE_ACCEPTED)) {
+            sb.append("Cheating was detected")
+                    .append("; forwarding to CHEATING_PAGE: ")
+                    .append(CHEATING_PAGE);
+            LOGGER.info(sb.toString());
+
+            req.getRequestDispatcher(CHEATING_PAGE).forward(req, resp);
+            return;
+        }
+
+        if (answerIfClimbCaptainBridge) {
+            session.setAttribute("markerFromStartToFinish", CLIMB_CAPTAIN_BRIDGE_ACCEPTED);
+        } else {
+            Integer total = (Integer) session.getAttribute("total");
+            if (total == null) {
+                total = 0;
             }
+            total++;
+            session.setAttribute("total", total);
         }
 
         resp.setStatus(200);

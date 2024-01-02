@@ -16,7 +16,7 @@ import java.io.IOException;
 
 import static ufo.Constants.*;
 
-@WebServlet("/acceptChallenge")
+@WebServlet("/acceptChallengeServlet")
 public class AcceptChallengeServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(
             AcceptChallengeServlet.class);
@@ -25,20 +25,22 @@ public class AcceptChallengeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         StringBuilder sb = new StringBuilder();
-        HttpSession session = req.getSession();
-
         boolean answerIfAcceptChallenge = Boolean.parseBoolean(req.getParameter("answer"));
         Answer answer = acceptChallengeService.call(answerIfAcceptChallenge);
 
-        if(answerIfAcceptChallenge) {
+        HttpSession session = req.getSession();
+        session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
+
+        if (answerIfAcceptChallenge) {
             session.setAttribute("markerFromStartToFinish", ACCEPT_CHALLENGE_ACCEPTED);
         } else {
             Integer total = (Integer) session.getAttribute("total");
-            if(total == null) {
+            if (total == null) {
                 total = 0;
             }
             total++;
             session.setAttribute("total", total);
+            session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
         }
 
         resp.setStatus(200);
@@ -52,6 +54,5 @@ public class AcceptChallengeServlet extends HttpServlet {
         LOGGER.info(sb.toString());
 
         req.getRequestDispatcher(answer.getPage()).forward(req, resp);
-        }
-
+    }
 }

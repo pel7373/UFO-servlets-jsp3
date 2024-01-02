@@ -15,7 +15,7 @@ import java.io.IOException;
 
 import static ufo.Constants.*;
 
-@WebServlet("/ufo02")
+@WebServlet("/whoAreYouServlet")
 public class WhoAreYouServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(
             WhoAreYouServlet.class);
@@ -24,38 +24,37 @@ public class WhoAreYouServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         StringBuilder sb = new StringBuilder();
-        HttpSession session = req.getSession();
-
         boolean answerWhoAreYou = Boolean.parseBoolean(req.getParameter("answer"));
         Answer answer = whoAreYouService.call(answerWhoAreYou);
-
+        HttpSession session = req.getSession();
         String markerFromStartToFinish = (String) session.getAttribute("markerFromStartToFinish");
-
-        if(markerFromStartToFinish.equals(CLIMB_CAPTAIN_BRIDGE_ACCEPTED)) {
-            if(answerWhoAreYou) {
-                Integer won = (Integer) session.getAttribute("won");
-                Integer total = (Integer) session.getAttribute("total");
-                if(total == null) {
-                    total = 0;
-                }
-                total++;
-                if(won == null) {
-                    won = 0;
-                }
-                won++;
-
-                session.setAttribute("won", won);
-                session.setAttribute("total", total);
-            } else {
-                Integer total = (Integer) session.getAttribute("total");
-                if(total == null) {
-                    total = 0;
-                }
-                total++;
-                session.setAttribute("total", total);
-            }
-        }
         session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
+
+        if (!markerFromStartToFinish.equals(CLIMB_CAPTAIN_BRIDGE_ACCEPTED)) {
+            sb.append("Cheating was detected")
+                    .append("; forwarding to CHEATING_PAGE: ")
+                    .append(CHEATING_PAGE);
+            LOGGER.info(sb.toString());
+
+            req.getRequestDispatcher(CHEATING_PAGE).forward(req, resp);
+            return;
+        }
+
+        Integer total = (Integer) session.getAttribute("total");
+        if (total == null) {
+            total = 0;
+        }
+        total++;
+        session.setAttribute("total", total);
+
+        if (answerWhoAreYou) {
+            Integer won = (Integer) session.getAttribute("won");
+            if (won == null) {
+                won = 0;
+            }
+            won++;
+            session.setAttribute("won", won);
+        }
 
         resp.setStatus(200);
         req.setAttribute("answer", answer.getMessage());

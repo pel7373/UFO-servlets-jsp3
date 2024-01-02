@@ -9,6 +9,7 @@ import static ufo.Constants.*;
 public class ClimbCaptainBridgeService {
     private static final Logger LOGGER = LoggerFactory.getLogger(
             ClimbCaptainBridgeService.class);
+
     public Answer call(boolean isAccepted) {
         StringBuilder sb = new StringBuilder();
         Answer answer;

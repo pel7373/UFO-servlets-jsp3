@@ -7,11 +7,10 @@
 --%>
 <%@ page import="org.slf4j.Logger" %>
 <%@ page import="org.slf4j.LoggerFactory" %>
-<%@ page import="static ufo.Constants.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Page 03: You are won! Congratulations!</title>
+    <title>You are won! Congratulations!</title>
 </head>
 <body>
 <jsp:include page="header.jsp" />

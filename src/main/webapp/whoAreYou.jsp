@@ -7,7 +7,6 @@
 --%>
 <%@ page import="org.slf4j.Logger" %>
 <%@ page import="org.slf4j.LoggerFactory" %>
-<%@ page import="static ufo.Constants.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -22,23 +21,14 @@
                 "whoAreYou.jsp");
         logger.info("whoAreYou.jsp is opened!");
         String message = (String)request.getAttribute("answer");
-
-        session = request.getSession();
-        String markerFromStartToFinish = (String) session.getAttribute("markerFromStartToFinish");
-        if(markerFromStartToFinish.equals(CLIMB_CAPTAIN_BRIDGE_ACCEPTED)) {
-            markerFromStartToFinish = WHO_ARE_YOU_ACCEPTED;
-            session.setAttribute("markerFromStartToFinish", markerFromStartToFinish);
-        }
     %>
     <%= message %>
 
     <h1>Хто ви?</h1>
-    <form action="/ufo02" method="post">
-
+    <form action="/whoAreYouServlet" method="post">
         <input type="radio" name="answer" value="true">Розповісти правду про себе<br>
         <input type="radio" name="answer" value="false">Збрехати про себе<br>
         <input type="submit" value="Ок">
-
     </form>
 </center>
 <jsp:include page="footer.jsp" />

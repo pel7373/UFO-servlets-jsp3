@@ -7,7 +7,6 @@
 --%>
 <%@ page import="org.slf4j.Logger" %>
 <%@ page import="org.slf4j.LoggerFactory" %>
-<%@ page import="static ufo.Constants.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -27,12 +26,10 @@
     <%= message %>
 
     <h1>Піднятися на капітанський місток?</h1>
-    <form action="/climbCaptainBridge" method="post">
-
+    <form action="/climbCaptainBridgeServlet" method="post">
         <input type="radio" name="answer" value="true">Так<br>
         <input type="radio" name="answer" value="false">Ні<br>
         <input type="submit" value="Ок">
-
     </form>
 </center>
 <jsp:include page="footer.jsp" />

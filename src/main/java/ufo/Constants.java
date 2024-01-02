@@ -12,5 +12,6 @@ public class Constants {
     public static final String WHO_ARE_YOU_ACCEPTED = "Ви розповіли правду про себе";
     public static final String WHO_ARE_YOU_NEXT_PAGE = "youWon.jsp";
     public static final String HISTORY_PAGE = "history.jsp";
+    public static final String CHEATING_PAGE = "cheating.jsp";
 
 }
