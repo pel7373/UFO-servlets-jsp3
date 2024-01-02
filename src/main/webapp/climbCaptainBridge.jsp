@@ -7,7 +7,7 @@
 --%>
 <%@ page import="org.slf4j.Logger" %>
 <%@ page import="org.slf4j.LoggerFactory" %>
-<%@ page import="static ufo.AppContent.*" %>
+<%@ page import="static ufo.Constants.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -23,18 +23,11 @@
         logger.info("climbCaptainBridge.jsp is opened!");
 
         String message = (String)request.getAttribute("answer");
-
-        session = request.getSession();
-        String markerFromStartToFinish = (String) session.getAttribute("markerFromStartToFinish");
-        if(markerFromStartToFinish.equals(STEP_0_ACCEPTED)) {
-            markerFromStartToFinish = STEP_1_ACCEPTED;
-            session.setAttribute("markerFromStartToFinish", STEP_1_ACCEPTED);
-        }
     %>
     <%= message %>
 
     <h1>Піднятися на капітанський місток?</h1>
-    <form action="/ufo01" method="post">
+    <form action="/climbCaptainBridge" method="post">
 
         <input type="radio" name="answer" value="true">Так<br>
         <input type="radio" name="answer" value="false">Ні<br>

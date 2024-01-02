@@ -4,13 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ec86dbf-0f86-4b2a-aa4d-7bb35745214d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="6ec86dbf-0f86-4b2a-aa4d-7bb35745214d" name="Changes" comment="All functionality was done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ufo/ClimbCaptainBridgeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ufo/web/HistoryServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ufo/ClimbCaptainBridgeServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/slf4jlogbackexample.2023-12-03.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slf4jlogbackexample.2023-12-04.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slf4jlogbackexample.2023-12-05.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/slf4jlogbackexample.log" beforeDir="false" afterPath="$PROJECT_DIR$/slf4jlogbackexample.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufo/AppContent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ufo/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufo/UFO00AcceptChallengeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ufo/AcceptChallengeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufo/UFO01CaptainBridgeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufo/UFO02WhoAreYouService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ufo/WhoAreYouService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufo/answers/UFOAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ufo/answers/Answer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufo/web/UFO00ChallengeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ufo/web/AcceptChallengeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufo/web/UFO01CaptainBridgeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ufo/web/ClimbCaptainBridgeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ufo/web/UFO02WhoAreYouServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ufo/web/WhoAreYouServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/climbCaptainBridge.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/climbCaptainBridge.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/history.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/losePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/losePage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/whoAreYou.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/whoAreYou.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/youWon.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/youWon.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ufo/UFO00AcceptChallengeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ufo/AcceptChallengeServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ufo/UFO01CaptainBridgeServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ufo/UFO02WhoAreYouServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ufo/WhoAreYouServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ufo/web/UFO00ChallengeServletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ufo/web/AcceptChallengeServletTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ufo/web/UFO01CaptainBridgeServletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ufo/web/ClimbCaptainBridgeServletTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ufo/web/UFO02WhoAreYouServletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ufo/web/WhoAreYouServletTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -31,17 +68,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn tomcat7:run" />
+    </option>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -50,8 +93,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1702431179980</updated>
-      <workItem from="1702431181837" duration="338000" />
+      <workItem from="1702431181837" duration="922000" />
+      <workItem from="1703823969106" duration="5977000" />
+      <workItem from="1704150152180" duration="515000" />
+      <workItem from="1704179425193" duration="4984000" />
     </task>
+    <task id="LOCAL-00001" summary="All functionality was done">
+      <created>1702431706837</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702431706837</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -67,5 +121,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="All functionality was done" />
+    <option name="LAST_COMMIT_MESSAGE" value="All functionality was done" />
   </component>
 </project>

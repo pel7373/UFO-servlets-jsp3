@@ -8,9 +8,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import static ufo.AppContent.*;
+import static ufo.Constants.*;
 
-class UFO02WhoAreYouServletTest extends Mockito {
+class ClimbCaptainBridgeServletTest extends Mockito {
     HttpServletRequest request = spy(HttpServletRequest.class);
     HttpServletResponse response = spy(HttpServletResponse.class);
     RequestDispatcher requestDispatcher = spy(RequestDispatcher.class);
@@ -19,14 +19,14 @@ class UFO02WhoAreYouServletTest extends Mockito {
     @Test
     public void doPostAnswerTrueTest() throws ServletException, IOException {
         String expectedAnswer = "true";
-        String expectedNextPage = NEXT_2_PAGE;
-        String expectedAnswerInResponse = STEP_2_ACCEPTED;
+        String expectedNextPage = CLIMB_CAPTAIN_BRIDGE_NEXT_PAGE;
+        String expectedAnswerInResponse = CLIMB_CAPTAIN_BRIDGE_ACCEPTED;
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
-        new UFO02WhoAreYouServlet().doPost(request, response);
+        new ClimbCaptainBridgeServlet().doPost(request, response);
         verify(requestDispatcher).forward(request, response);
         verify(request, times(1)).getParameter("answer");
         verify(request, times(1)).setAttribute("answer", expectedAnswerInResponse);
@@ -37,13 +37,13 @@ class UFO02WhoAreYouServletTest extends Mockito {
     public void doPostAnswerFalseTest() throws ServletException, IOException {
         String expectedAnswer = "false";
         String expectedNextPage = LOSE_PAGE;
-        String expectedAnswerInResponse = STEP_2_NOT_ACCEPTED;
+        String expectedAnswerInResponse = CLIMB_CAPTAIN_BRIDGE_NOT_ACCEPTED;
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
-        new UFO02WhoAreYouServlet().doPost(request, response);
+        new ClimbCaptainBridgeServlet().doPost(request, response);
         verify(requestDispatcher).forward(request, response);
         verify(request, times(1)).getParameter("answer");
         verify(request, times(1)).setAttribute("answer", expectedAnswerInResponse);
@@ -54,13 +54,13 @@ class UFO02WhoAreYouServletTest extends Mockito {
     public void doPostAnswerAnyTest() throws ServletException, IOException {
         String expectedAnswer = "aaa111";
         String expectedNextPage = LOSE_PAGE;
-        String expectedAnswerInResponse = STEP_2_NOT_ACCEPTED;
+        String expectedAnswerInResponse = CLIMB_CAPTAIN_BRIDGE_NOT_ACCEPTED;
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
-        new UFO02WhoAreYouServlet().doPost(request, response);
+        new ClimbCaptainBridgeServlet().doPost(request, response);
         verify(requestDispatcher).forward(request, response);
         verify(request, times(1)).getParameter("answer");
         verify(request, times(1)).setAttribute("answer", expectedAnswerInResponse);

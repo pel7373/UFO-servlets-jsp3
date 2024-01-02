@@ -6,13 +6,11 @@
         Integer total = (Integer) session.getAttribute("total");
         if(total == null) {
             total = 0;
-            session.setAttribute("total", 0);
         }
 
         Integer won = (Integer) session.getAttribute("won");
         if(won == null) {
             won = 0;
-            session.setAttribute("won", 0);
         }
 
     %>

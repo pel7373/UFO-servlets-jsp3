@@ -8,9 +8,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import static ufo.AppContent.*;
+import static ufo.Constants.*;
 
-class UFO01CaptainBridgeServletTest extends Mockito {
+class WhoAreYouServletTest extends Mockito {
     HttpServletRequest request = spy(HttpServletRequest.class);
     HttpServletResponse response = spy(HttpServletResponse.class);
     RequestDispatcher requestDispatcher = spy(RequestDispatcher.class);
@@ -19,14 +19,14 @@ class UFO01CaptainBridgeServletTest extends Mockito {
     @Test
     public void doPostAnswerTrueTest() throws ServletException, IOException {
         String expectedAnswer = "true";
-        String expectedNextPage = NEXT_1_PAGE;
-        String expectedAnswerInResponse = STEP_1_ACCEPTED;
+        String expectedNextPage = WHO_ARE_YOU_NEXT_PAGE;
+        String expectedAnswerInResponse = WHO_ARE_YOU_ACCEPTED;
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
-        new UFO01CaptainBridgeServlet().doPost(request, response);
+        new WhoAreYouServlet().doPost(request, response);
         verify(requestDispatcher).forward(request, response);
         verify(request, times(1)).getParameter("answer");
         verify(request, times(1)).setAttribute("answer", expectedAnswerInResponse);
@@ -37,13 +37,13 @@ class UFO01CaptainBridgeServletTest extends Mockito {
     public void doPostAnswerFalseTest() throws ServletException, IOException {
         String expectedAnswer = "false";
         String expectedNextPage = LOSE_PAGE;
-        String expectedAnswerInResponse = STEP_1_NOT_ACCEPTED;
+        String expectedAnswerInResponse = WHO_ARE_YOU_NOT_ACCEPTED;
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
-        new UFO01CaptainBridgeServlet().doPost(request, response);
+        new WhoAreYouServlet().doPost(request, response);
         verify(requestDispatcher).forward(request, response);
         verify(request, times(1)).getParameter("answer");
         verify(request, times(1)).setAttribute("answer", expectedAnswerInResponse);
@@ -54,13 +54,13 @@ class UFO01CaptainBridgeServletTest extends Mockito {
     public void doPostAnswerAnyTest() throws ServletException, IOException {
         String expectedAnswer = "aaa111";
         String expectedNextPage = LOSE_PAGE;
-        String expectedAnswerInResponse = STEP_1_NOT_ACCEPTED;
+        String expectedAnswerInResponse = WHO_ARE_YOU_NOT_ACCEPTED;
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
-        new UFO01CaptainBridgeServlet().doPost(request, response);
+        new WhoAreYouServlet().doPost(request, response);
         verify(requestDispatcher).forward(request, response);
         verify(request, times(1)).getParameter("answer");
         verify(request, times(1)).setAttribute("answer", expectedAnswerInResponse);

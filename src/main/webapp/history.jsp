@@ -7,7 +7,6 @@
 --%>
 <%@ page import="org.slf4j.Logger" %>
 <%@ page import="org.slf4j.LoggerFactory" %>
-<%@ page import="static ufo.AppContent.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,7 +17,7 @@
   Logger logger = LoggerFactory.getLogger(
           "history.jsp");
   logger.info("history.jsp is opened!");
-  session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
+
 %>
 
 <jsp:include page="header.jsp" />

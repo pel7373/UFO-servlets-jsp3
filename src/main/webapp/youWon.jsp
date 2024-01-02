@@ -7,7 +7,7 @@
 --%>
 <%@ page import="org.slf4j.Logger" %>
 <%@ page import="org.slf4j.LoggerFactory" %>
-<%@ page import="static ufo.AppContent.*" %>
+<%@ page import="static ufo.Constants.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -22,22 +22,6 @@
             "youWon.jsp");
     logger.info("youWon.jsp is opened!");
     String message = (String)request.getAttribute("answer");
-
-    session = request.getSession();
-    String markerFromStartToFinish = (String) session.getAttribute("markerFromStartToFinish");
-    if(markerFromStartToFinish.equals(STEP_2_ACCEPTED)) {
-        Integer won = (Integer) session.getAttribute("won");
-        Integer total = (Integer) session.getAttribute("total");
-        total++;
-        if(won != null) {
-            won++;
-        } else {
-            won = 1;
-        }
-        session.setAttribute("won", won);
-        session.setAttribute("total", total);
-        session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
-    }
 %>
         <%= message %>
 

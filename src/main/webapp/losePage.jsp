@@ -1,6 +1,6 @@
 <%@ page import="org.slf4j.Logger" %>
 <%@ page import="org.slf4j.LoggerFactory" %>
-<%@ page import="static ufo.AppContent.*" %>
+<%@ page import="static ufo.Constants.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,22 +13,14 @@
 <%
     Logger logger = LoggerFactory.getLogger(
             "losePage.jsp");
-    StringBuilder sb = new StringBuilder();
-    sb.append("losePage.jsp is opened!");
-    logger.info(sb.toString());
+    logger.info("losePage.jsp is opened!");
 
     String message = (String)request.getAttribute("answer");
 
     session = request.getSession();
-    String markerFromStartToFinish = (String) session.getAttribute("markerFromStartToFinish");
-    if(markerFromStartToFinish != null
-        && (markerFromStartToFinish.equals(STEP_0_ACCEPTED)
-            || markerFromStartToFinish.equals(STEP_1_ACCEPTED)
-            || markerFromStartToFinish.equals(STEP_2_ACCEPTED))) {
-        Integer total = (Integer) session.getAttribute("total");
-        total++;
-        session.setAttribute("total", total);
-        session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
+    Integer total = (Integer) session.getAttribute("total");
+    if(total == null) {
+        total = 0;
     }
 %>
 <%= message %>

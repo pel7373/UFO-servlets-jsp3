@@ -7,7 +7,7 @@
 --%>
 <%@ page import="org.slf4j.Logger" %>
 <%@ page import="org.slf4j.LoggerFactory" %>
-<%@ page import="static ufo.AppContent.*" %>
+<%@ page import="static ufo.Constants.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -25,8 +25,8 @@
 
         session = request.getSession();
         String markerFromStartToFinish = (String) session.getAttribute("markerFromStartToFinish");
-        if(markerFromStartToFinish.equals(STEP_1_ACCEPTED)) {
-            markerFromStartToFinish = STEP_2_ACCEPTED;
+        if(markerFromStartToFinish.equals(CLIMB_CAPTAIN_BRIDGE_ACCEPTED)) {
+            markerFromStartToFinish = WHO_ARE_YOU_ACCEPTED;
             session.setAttribute("markerFromStartToFinish", markerFromStartToFinish);
         }
     %>
