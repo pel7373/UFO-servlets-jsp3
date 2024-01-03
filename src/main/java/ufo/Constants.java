@@ -13,5 +13,6 @@ public class Constants {
     public static final String WHO_ARE_YOU_NEXT_PAGE = "youWon.jsp";
     public static final String HISTORY_PAGE = "history.jsp";
     public static final String CHEATING_PAGE = "cheating.jsp";
+    public static final String LOGGING_OF_CHEATING = "Cheating was detected; forwarding to CHEATING_PAGE";
 
 }

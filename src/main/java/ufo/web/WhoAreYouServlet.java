@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Optional;
 
 import static ufo.Constants.*;
 
@@ -31,29 +32,17 @@ public class WhoAreYouServlet extends HttpServlet {
         session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
 
         if (!markerFromStartToFinish.equals(CLIMB_CAPTAIN_BRIDGE_ACCEPTED)) {
-            sb.append("Cheating was detected")
-                    .append("; forwarding to CHEATING_PAGE: ")
-                    .append(CHEATING_PAGE);
-            LOGGER.info(sb.toString());
-
+            LOGGER.info(LOGGING_OF_CHEATING);
             req.getRequestDispatcher(CHEATING_PAGE).forward(req, resp);
             return;
         }
 
-        Integer total = (Integer) session.getAttribute("total");
-        if (total == null) {
-            total = 0;
-        }
-        total++;
-        session.setAttribute("total", total);
+        Integer gameCounter = Optional.ofNullable((Integer)session.getAttribute("gameCounter")).orElse(0);
+        session.setAttribute("gameCounter", ++gameCounter);
 
         if (answerWhoAreYou) {
-            Integer won = (Integer) session.getAttribute("won");
-            if (won == null) {
-                won = 0;
-            }
-            won++;
-            session.setAttribute("won", won);
+            Integer counterOfWonGames  = Optional.ofNullable((Integer)session.getAttribute("counterOfWonGames")).orElse(0);
+            session.setAttribute("counterOfWonGames", ++counterOfWonGames );
         }
 
         resp.setStatus(200);

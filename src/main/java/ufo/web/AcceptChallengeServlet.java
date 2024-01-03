@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Optional;
 
 import static ufo.Constants.*;
 
@@ -34,13 +35,8 @@ public class AcceptChallengeServlet extends HttpServlet {
         if (answerIfAcceptChallenge) {
             session.setAttribute("markerFromStartToFinish", ACCEPT_CHALLENGE_ACCEPTED);
         } else {
-            Integer total = (Integer) session.getAttribute("total");
-            if (total == null) {
-                total = 0;
-            }
-            total++;
-            session.setAttribute("total", total);
-            session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
+            Integer gameCounter = Optional.ofNullable((Integer)session.getAttribute("gameCounter")).orElse(0);
+            session.setAttribute("gameCounter", ++gameCounter);
         }
 
         resp.setStatus(200);

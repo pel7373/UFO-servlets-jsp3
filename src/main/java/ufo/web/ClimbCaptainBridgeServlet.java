@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.Optional;
 
 import static ufo.Constants.*;
 
@@ -28,15 +29,10 @@ public class ClimbCaptainBridgeServlet extends HttpServlet {
         Answer answer = climbCaptainBridgeService.call(answerIfClimbCaptainBridge);
         HttpSession session = req.getSession();
         String markerFromStartToFinish = (String) session.getAttribute("markerFromStartToFinish");
-
         session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
 
         if (!markerFromStartToFinish.equals(ACCEPT_CHALLENGE_ACCEPTED)) {
-            sb.append("Cheating was detected")
-                    .append("; forwarding to CHEATING_PAGE: ")
-                    .append(CHEATING_PAGE);
-            LOGGER.info(sb.toString());
-
+            LOGGER.info(LOGGING_OF_CHEATING);
             req.getRequestDispatcher(CHEATING_PAGE).forward(req, resp);
             return;
         }
@@ -44,12 +40,8 @@ public class ClimbCaptainBridgeServlet extends HttpServlet {
         if (answerIfClimbCaptainBridge) {
             session.setAttribute("markerFromStartToFinish", CLIMB_CAPTAIN_BRIDGE_ACCEPTED);
         } else {
-            Integer total = (Integer) session.getAttribute("total");
-            if (total == null) {
-                total = 0;
-            }
-            total++;
-            session.setAttribute("total", total);
+            Integer gameCounter = Optional.ofNullable((Integer)session.getAttribute("gameCounter")).orElse(0);
+            session.setAttribute("gameCounter", ++gameCounter);
         }
 
         resp.setStatus(200);

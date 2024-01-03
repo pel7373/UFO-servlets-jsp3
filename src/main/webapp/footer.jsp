@@ -3,17 +3,16 @@
     <hr>
     <%
         session = request.getSession();
-        Integer total = (Integer) session.getAttribute("total");
-        if(total == null) {
-            total = 0;
+        Integer gameCounter = (Integer) session.getAttribute("gameCounter");
+        if(gameCounter == null) {
+            gameCounter = 0;
         }
 
-        Integer won = (Integer) session.getAttribute("won");
-        if(won == null) {
-            won = 0;
+        Integer counterOfWonGames = (Integer) session.getAttribute("counterOfWonGames");
+        if(counterOfWonGames == null) {
+            counterOfWonGames = 0;
         }
-
     %>
-    Загальна кількість зіграних ігор у цій сесії: <b><%= total%></b>; кількість виграних ігор у цій сесії: <b><%= won %></b>
+    Загальна кількість зіграних ігор у цій сесії: <b><%= gameCounter%></b>; кількість виграних ігор у цій сесії: <b><%= counterOfWonGames %></b>
 
 </center>
