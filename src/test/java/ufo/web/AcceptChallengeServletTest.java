@@ -7,6 +7,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import static ufo.Constants.*;
 
@@ -14,6 +15,7 @@ class AcceptChallengeServletTest extends Mockito {
     HttpServletRequest request = spy(HttpServletRequest.class);
     HttpServletResponse response = spy(HttpServletResponse.class);
     RequestDispatcher requestDispatcher = spy(RequestDispatcher.class);
+    HttpSession session = spy(HttpSession.class);
     ServletContext context = spy(ServletContext.class);
 
     @Test
@@ -24,6 +26,7 @@ class AcceptChallengeServletTest extends Mockito {
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
+        when(request.getSession()).thenReturn(session);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
         new AcceptChallengeServlet().doPost(request, response);
@@ -41,6 +44,7 @@ class AcceptChallengeServletTest extends Mockito {
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
+        when(request.getSession()).thenReturn(session);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
         new AcceptChallengeServlet().doPost(request, response);
@@ -58,6 +62,7 @@ class AcceptChallengeServletTest extends Mockito {
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
+        when(request.getSession()).thenReturn(session);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
         new AcceptChallengeServlet().doPost(request, response);

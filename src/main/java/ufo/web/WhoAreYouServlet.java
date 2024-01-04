@@ -28,7 +28,7 @@ public class WhoAreYouServlet extends HttpServlet {
         boolean answerWhoAreYou = Boolean.parseBoolean(req.getParameter("answer"));
         Answer answer = whoAreYouService.call(answerWhoAreYou);
         HttpSession session = req.getSession();
-        String markerFromStartToFinish = (String) session.getAttribute("markerFromStartToFinish");
+        String markerFromStartToFinish = Optional.ofNullable((String) session.getAttribute("markerFromStartToFinish")).orElse(LOSE_PAGE);
         session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
 
         if (!markerFromStartToFinish.equals(CLIMB_CAPTAIN_BRIDGE_ACCEPTED)) {

@@ -7,12 +7,14 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import static ufo.Constants.*;
 
 class ClimbCaptainBridgeServletTest extends Mockito {
     HttpServletRequest request = spy(HttpServletRequest.class);
     HttpServletResponse response = spy(HttpServletResponse.class);
+    HttpSession session = spy(HttpSession.class);
     RequestDispatcher requestDispatcher = spy(RequestDispatcher.class);
     ServletContext context = spy(ServletContext.class);
 
@@ -24,6 +26,8 @@ class ClimbCaptainBridgeServletTest extends Mockito {
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
+        when(request.getSession()).thenReturn(session);
+        when(session.getAttribute("markerFromStartToFinish")).thenReturn(ACCEPT_CHALLENGE_ACCEPTED);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
         new ClimbCaptainBridgeServlet().doPost(request, response);
@@ -41,6 +45,8 @@ class ClimbCaptainBridgeServletTest extends Mockito {
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
+        when(request.getSession()).thenReturn(session);
+        when(session.getAttribute("markerFromStartToFinish")).thenReturn(ACCEPT_CHALLENGE_ACCEPTED);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
         new ClimbCaptainBridgeServlet().doPost(request, response);
@@ -58,6 +64,8 @@ class ClimbCaptainBridgeServletTest extends Mockito {
 
         when(request.getParameter("answer")).thenReturn(expectedAnswer);
         when(request.getServletContext()).thenReturn(context);
+        when(request.getSession()).thenReturn(session);
+        when(session.getAttribute("markerFromStartToFinish")).thenReturn(ACCEPT_CHALLENGE_ACCEPTED);
         when(request.getRequestDispatcher(expectedNextPage)).thenReturn(requestDispatcher);
 
         new ClimbCaptainBridgeServlet().doPost(request, response);

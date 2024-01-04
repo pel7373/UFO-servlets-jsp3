@@ -28,7 +28,7 @@ public class ClimbCaptainBridgeServlet extends HttpServlet {
         boolean answerIfClimbCaptainBridge = Boolean.parseBoolean(req.getParameter("answer"));
         Answer answer = climbCaptainBridgeService.call(answerIfClimbCaptainBridge);
         HttpSession session = req.getSession();
-        String markerFromStartToFinish = (String) session.getAttribute("markerFromStartToFinish");
+        String markerFromStartToFinish = Optional.ofNullable((String) session.getAttribute("markerFromStartToFinish")).orElse(LOSE_PAGE);
         session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
 
         if (!markerFromStartToFinish.equals(ACCEPT_CHALLENGE_ACCEPTED)) {
