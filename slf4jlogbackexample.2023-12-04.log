@@ -1,2 +1,0 @@
-04.12.2023 23:57:50.924 [main] INFO   u.UFO00AcceptChallengeService - Answer was received. isAccepted: true; message: Ви прийняли виклик; next page: climbCaptainBridge.jsp
-04.12.2023 23:57:50.935 [main] INFO   u.w.UFO00ChallengeServlet - Answer was received. Message: Ви прийняли виклик; forwarding to page: climbCaptainBridge.jsp; status was set: 200.
