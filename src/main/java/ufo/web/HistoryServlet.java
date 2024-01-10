@@ -19,14 +19,14 @@ public class HistoryServlet extends HttpServlet {
             HistoryServlet.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder infoForLogger = new StringBuilder();
 
         HttpSession session = req.getSession();
         session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
 
-        sb.append("HistoryServlet has worked")
+        infoForLogger.append("HistoryServlet has worked")
                 .append("; forwarding to HISTORY_PAGE: " + HISTORY_PAGE);
-        LOGGER.info(sb.toString());
+        LOGGER.info(infoForLogger.toString());
 
         req.getRequestDispatcher(HISTORY_PAGE).forward(req, resp);
     }

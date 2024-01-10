@@ -15,7 +15,7 @@ class WhoAreYouServiceTest {
     WhoAreYouService whoAreYouService = new WhoAreYouService();
     @Test
     public void callTestTrue() {
-        Answer answer = whoAreYouService.call(true);
+        Answer answer = whoAreYouService.getAnswer(true);
         Answer expectedAnswer = new Answer(WHO_ARE_YOU_ACCEPTED, WHO_ARE_YOU_NEXT_PAGE);
         assertEquals(expectedAnswer.getMessage(), answer.getMessage());
         assertEquals(expectedAnswer.getPage(), answer.getPage());
@@ -23,7 +23,7 @@ class WhoAreYouServiceTest {
     }
     @Test
     public void callTestFalse() {
-        Answer answer = whoAreYouService.call(false);
+        Answer answer = whoAreYouService.getAnswer(false);
         Answer expectedAnswer = new Answer(WHO_ARE_YOU_NOT_ACCEPTED, LOSE_PAGE);
         assertEquals(expectedAnswer.getMessage(), answer.getMessage());
         assertEquals(expectedAnswer.getPage(), answer.getPage());
@@ -32,7 +32,7 @@ class WhoAreYouServiceTest {
     @Test
     public void callTestAny() {
         String otherAnswer = "aaa11122";
-        Answer answer = whoAreYouService.call(Boolean.parseBoolean(otherAnswer));
+        Answer answer = whoAreYouService.getAnswer(Boolean.parseBoolean(otherAnswer));
         Answer expectedAnswer = new Answer(WHO_ARE_YOU_NOT_ACCEPTED, LOSE_PAGE);
         assertEquals(expectedAnswer.getMessage(), answer.getMessage());
         assertEquals(expectedAnswer.getPage(), answer.getPage());

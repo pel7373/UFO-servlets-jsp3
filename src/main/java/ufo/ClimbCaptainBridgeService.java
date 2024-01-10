@@ -10,27 +10,27 @@ public class ClimbCaptainBridgeService {
     private static final Logger LOGGER = LoggerFactory.getLogger(
             ClimbCaptainBridgeService.class);
 
-    public Answer call(boolean isAccepted) {
-        StringBuilder sb = new StringBuilder();
+    public Answer getAnswer(boolean isAccepted) {
+        StringBuilder infoForLogger = new StringBuilder();
         Answer answer;
 
-        sb.append("Answer was received: ")
+        infoForLogger.append("Answer was received: ")
                 .append(isAccepted)
                 .append("; message: ");
 
         if (isAccepted) {
             answer = new Answer(CLIMB_CAPTAIN_BRIDGE_ACCEPTED, CLIMB_CAPTAIN_BRIDGE_NEXT_PAGE);
-            sb.append(CLIMB_CAPTAIN_BRIDGE_ACCEPTED)
+            infoForLogger.append(CLIMB_CAPTAIN_BRIDGE_ACCEPTED)
                     .append("; next page: ")
                     .append(CLIMB_CAPTAIN_BRIDGE_NEXT_PAGE);
 
         } else {
             answer = new Answer(CLIMB_CAPTAIN_BRIDGE_NOT_ACCEPTED, LOSE_PAGE);
-            sb.append(CLIMB_CAPTAIN_BRIDGE_NOT_ACCEPTED)
+            infoForLogger.append(CLIMB_CAPTAIN_BRIDGE_NOT_ACCEPTED)
                     .append("; next page: ")
                     .append(LOSE_PAGE);
         }
-        LOGGER.info(sb.toString());
+        LOGGER.info(infoForLogger.toString());
         return answer;
     }
 }

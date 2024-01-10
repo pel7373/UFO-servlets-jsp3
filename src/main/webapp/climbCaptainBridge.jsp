@@ -26,7 +26,7 @@
     <%= message %>
 
     <h1>Піднятися на капітанський місток?</h1>
-    <form action="/climbCaptainBridgeServlet" method="post">
+    <form action="/climb-captain-bridge" method="post">
         <input type="radio" name="answer" value="true">Так<br>
         <input type="radio" name="answer" value="false">Ні<br>
         <input type="submit" value="Ок">

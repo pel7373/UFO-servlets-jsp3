@@ -14,7 +14,7 @@ public class AcceptChallengeServiceTest {
     AcceptChallengeService acceptChallengeService = new AcceptChallengeService();
     @Test
     public void callTestTrue() {
-        Answer answer = acceptChallengeService.call(true);
+        Answer answer = acceptChallengeService.getAnswer(true);
         Answer expectedAnswer = new Answer(ACCEPT_CHALLENGE_ACCEPTED, ACCEPT_CHALLENGE_NEXT_PAGE);
         assertEquals(expectedAnswer.getMessage(), answer.getMessage());
         assertEquals(expectedAnswer.getPage(), answer.getPage());
@@ -22,7 +22,7 @@ public class AcceptChallengeServiceTest {
     }
     @Test
     public void callTestFalse() {
-        Answer answer = acceptChallengeService.call(false);
+        Answer answer = acceptChallengeService.getAnswer(false);
         Answer expectedAnswer = new Answer(ACCEPT_CHALLENGE_NOT_ACCEPTED, LOSE_PAGE);
         assertEquals(expectedAnswer.getMessage(), answer.getMessage());
         assertEquals(expectedAnswer.getPage(), answer.getPage());
@@ -31,7 +31,7 @@ public class AcceptChallengeServiceTest {
     @Test
     public void callTestAny() {
         String otherAnswer = "aaa11122";
-        Answer answer = acceptChallengeService.call(Boolean.parseBoolean(otherAnswer));
+        Answer answer = acceptChallengeService.getAnswer(Boolean.parseBoolean(otherAnswer));
         Answer expectedAnswer = new Answer(ACCEPT_CHALLENGE_NOT_ACCEPTED, LOSE_PAGE);
         assertEquals(expectedAnswer.getMessage(), answer.getMessage());
         assertEquals(expectedAnswer.getPage(), answer.getPage());

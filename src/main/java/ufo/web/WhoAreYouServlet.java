@@ -16,7 +16,7 @@ import java.util.Optional;
 
 import static ufo.Constants.*;
 
-@WebServlet("/whoAreYouServlet")
+@WebServlet("/who-are-you")
 public class WhoAreYouServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(
             WhoAreYouServlet.class);
@@ -24,9 +24,9 @@ public class WhoAreYouServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder infoForLogger = new StringBuilder();
         boolean answerWhoAreYou = Boolean.parseBoolean(req.getParameter("answer"));
-        Answer answer = whoAreYouService.call(answerWhoAreYou);
+        Answer answer = whoAreYouService.getAnswer(answerWhoAreYou);
         HttpSession session = req.getSession();
         String markerFromStartToFinish = Optional.ofNullable((String) session.getAttribute("markerFromStartToFinish")).orElse(LOSE_PAGE);
         session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
@@ -39,21 +39,23 @@ public class WhoAreYouServlet extends HttpServlet {
 
         Integer gameCounter = Optional.ofNullable((Integer)session.getAttribute("gameCounter")).orElse(0);
         session.setAttribute("gameCounter", ++gameCounter);
+        infoForLogger.append("gameCounter: " + gameCounter + ". ");
 
         if (answerWhoAreYou) {
             Integer counterOfWonGames  = Optional.ofNullable((Integer)session.getAttribute("counterOfWonGames")).orElse(0);
             session.setAttribute("counterOfWonGames", ++counterOfWonGames );
+            infoForLogger.append("counterOfWonGames: " + counterOfWonGames + ". ");
         }
 
         resp.setStatus(200);
         req.setAttribute("answer", answer.getMessage());
 
-        sb.append("Answer was received. Message: ")
+        infoForLogger.append("Answer was received. Message: ")
                 .append(answer.getMessage())
                 .append("; forwarding to page: ")
                 .append(answer.getPage())
                 .append("; status was set: 200.");
-        LOGGER.info(sb.toString());
+        LOGGER.info(infoForLogger.toString());
 
         req.getRequestDispatcher(answer.getPage()).forward(req, resp);
     }

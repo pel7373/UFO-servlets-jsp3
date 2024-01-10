@@ -15,7 +15,7 @@ class ClimbCaptainBridgeServiceTest {
     ClimbCaptainBridgeService climbCaptainBridgeService = new ClimbCaptainBridgeService();
     @Test
     public void callTestTrue() {
-        Answer answer = climbCaptainBridgeService.call(true);
+        Answer answer = climbCaptainBridgeService.getAnswer(true);
         Answer expectedAnswer = new Answer(CLIMB_CAPTAIN_BRIDGE_ACCEPTED, CLIMB_CAPTAIN_BRIDGE_NEXT_PAGE);
         assertEquals(expectedAnswer.getMessage(), answer.getMessage());
         assertEquals(expectedAnswer.getPage(), answer.getPage());
@@ -23,7 +23,7 @@ class ClimbCaptainBridgeServiceTest {
     }
     @Test
     public void callTestFalse() {
-        Answer answer = climbCaptainBridgeService.call(false);
+        Answer answer = climbCaptainBridgeService.getAnswer(false);
         Answer expectedAnswer = new Answer(CLIMB_CAPTAIN_BRIDGE_NOT_ACCEPTED, LOSE_PAGE);
         assertEquals(expectedAnswer.getMessage(), answer.getMessage());
         assertEquals(expectedAnswer.getPage(), answer.getPage());
@@ -32,7 +32,7 @@ class ClimbCaptainBridgeServiceTest {
     @Test
     public void callTestAny() {
         String otherAnswer = "aaa11122";
-        Answer answer = climbCaptainBridgeService.call(Boolean.parseBoolean(otherAnswer));
+        Answer answer = climbCaptainBridgeService.getAnswer(Boolean.parseBoolean(otherAnswer));
         Answer expectedAnswer = new Answer(CLIMB_CAPTAIN_BRIDGE_NOT_ACCEPTED, LOSE_PAGE);
         assertEquals(expectedAnswer.getMessage(), answer.getMessage());
         assertEquals(expectedAnswer.getPage(), answer.getPage());

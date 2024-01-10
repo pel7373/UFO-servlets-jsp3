@@ -16,7 +16,7 @@ import java.util.Optional;
 
 import static ufo.Constants.*;
 
-@WebServlet("/climbCaptainBridgeServlet")
+@WebServlet("/climb-captain-bridge")
 public class ClimbCaptainBridgeServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(
             ClimbCaptainBridgeServlet.class);
@@ -24,9 +24,9 @@ public class ClimbCaptainBridgeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder infoForLogger = new StringBuilder();
         boolean answerIfClimbCaptainBridge = Boolean.parseBoolean(req.getParameter("answer"));
-        Answer answer = climbCaptainBridgeService.call(answerIfClimbCaptainBridge);
+        Answer answer = climbCaptainBridgeService.getAnswer(answerIfClimbCaptainBridge);
         HttpSession session = req.getSession();
         String markerFromStartToFinish = Optional.ofNullable((String) session.getAttribute("markerFromStartToFinish")).orElse(LOSE_PAGE);
         session.setAttribute("markerFromStartToFinish", LOSE_PAGE);
@@ -42,17 +42,18 @@ public class ClimbCaptainBridgeServlet extends HttpServlet {
         } else {
             Integer gameCounter = Optional.ofNullable((Integer)session.getAttribute("gameCounter")).orElse(0);
             session.setAttribute("gameCounter", ++gameCounter);
+            infoForLogger.append("gameCounter: " + gameCounter + ". ");
         }
 
         resp.setStatus(200);
         req.setAttribute("answer", answer.getMessage());
 
-        sb.append("Answer was received. Message: ")
+        infoForLogger.append("Answer was received. Message: ")
                 .append(answer.getMessage())
                 .append("; forwarding to page: ")
                 .append(answer.getPage())
                 .append("; status was set: 200.");
-        LOGGER.info(sb.toString());
+        LOGGER.info(infoForLogger.toString());
 
         req.getRequestDispatcher(answer.getPage()).forward(req, resp);
     }

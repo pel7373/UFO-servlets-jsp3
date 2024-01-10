@@ -25,7 +25,7 @@
     <%= message %>
 
     <h1>Хто ви?</h1>
-    <form action="/whoAreYouServlet" method="post">
+    <form action="/who-are-you" method="post">
         <input type="radio" name="answer" value="true">Розповісти правду про себе<br>
         <input type="radio" name="answer" value="false">Збрехати про себе<br>
         <input type="submit" value="Ок">

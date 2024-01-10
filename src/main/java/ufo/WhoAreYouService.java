@@ -10,26 +10,26 @@ public class WhoAreYouService {
     private static final Logger LOGGER = LoggerFactory.getLogger(
             WhoAreYouService.class);
 
-    public Answer call(boolean isAccepted) {
-        StringBuilder sb = new StringBuilder();
+    public Answer getAnswer(boolean isAccepted) {
+        StringBuilder infoForLogger = new StringBuilder();
         Answer answer;
 
-        sb.append("Answer was received: ")
+        infoForLogger.append("Answer was received: ")
                 .append(isAccepted)
                 .append("; message: ");
 
         if (isAccepted) {
             answer = new Answer(WHO_ARE_YOU_ACCEPTED, WHO_ARE_YOU_NEXT_PAGE);
-            sb.append(WHO_ARE_YOU_ACCEPTED)
+            infoForLogger.append(WHO_ARE_YOU_ACCEPTED)
                     .append("; next page: ")
                     .append(WHO_ARE_YOU_NEXT_PAGE);
         } else {
             answer = new Answer(WHO_ARE_YOU_NOT_ACCEPTED, LOSE_PAGE);
-            sb.append(WHO_ARE_YOU_NOT_ACCEPTED)
+            infoForLogger.append(WHO_ARE_YOU_NOT_ACCEPTED)
                     .append("; next page: ")
                     .append(LOSE_PAGE);
         }
-        LOGGER.info(sb.toString());
+        LOGGER.info(infoForLogger.toString());
         return answer;
     }
 }
